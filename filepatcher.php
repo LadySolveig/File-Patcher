@@ -163,7 +163,7 @@ if (!class_exists('filepatcherInstallerScript'))
                     // Remove the manifest folder.
                     $manifestPath = Path::clean(JPATH_ADMINISTRATOR . '/manifests/files/' . $plugin->element);
 
-                    if (is_folder($manifestPath) && !Folder::delete($manifestPath)) {
+                    if (is_dir($manifestPath) && !Folder::delete($manifestPath)) {
                         Factory::getApplication()->enqueueMessage('File patcher cleanup warning. Failed to remove manifest folder: ' . $manifestPath, 'warning');
                     }
 
